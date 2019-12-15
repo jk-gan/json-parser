@@ -1,9 +1,21 @@
-struct Parser {}
+pub struct Parser {
+    json: String,
+}
 
 impl Parser {
-    fn new() -> Self {
-        Parser {}
+    pub fn new(json: String) -> Self {
+        Parser { json }
     }
 
-    fn parse_object(&self) {}
+    pub fn parse_object(&self) {
+        if let Some(x) = self.json.chars().nth(0) {
+            if x == '{' {
+                // skip_whitespace();
+
+                for char in self.json.chars() {
+                    dbg!(char);
+                }
+            }
+        }
+    }
 }
